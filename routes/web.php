@@ -16,3 +16,12 @@ Route::get('/help','StaticPagesController@help')->name('help');
 Route::get('/about','StaticPagesController@about')->name('about');
 
 Route::get('signup', 'UsersController@create')->name('signup');
+Route::resource('users','UsersController');
+/*
+ * 等同于
+ * Route::post('/users','UsersController@store')->name('user.store');
+ * Route::get('/users/{user}/edit','UsersController@edit')->name('user.edit');
+ * Route::patch('/users/{user}','UsersController@update')->name('user.update');
+ * Route::delete('/users/{user}','UsersController@destroy')->name('user.destroy');
+ */
+
